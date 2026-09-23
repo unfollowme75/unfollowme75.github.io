@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>unfollowme.75</title>
+  <title>inParislifing</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -62,7 +62,7 @@
         <div class="mono text-xs text-stone-500 font-light">❕usernotfound</div>
       </div>
 
-      <!-- INSTRUCTIONS BILINGUES HARMONISÉES -->
+      <!-- INSTRUCTIONS BILINGUES -->
       <div class="space-y-1 pt-1">
         <p class="mono text-[11px] text-stone-400 font-light leading-relaxed">
           Le mot de passe est un détail du dernier post Instagram
@@ -120,10 +120,9 @@
         Il est arrivé avec vingt-deux minutes de retard. Pas un mot d'excuse, juste une main passée dans des cheveux trop gominés pour un mardi soir rue de la Roquette. 
       </p>
 
-      <!-- EMPLACEMENT PHOTO RECADRÉE / D'AMBIANCE -->
+      <!-- EMPLACEMENT PHOTO D'AMBIANCE SANS VISAGE -->
       <div class="my-10 border border-stone-800 p-2 bg-[#090909]">
         <div class="aspect-[4/3] bg-stone-950 flex items-center justify-center overflow-hidden relative">
-          <!-- Image d'illustration d'ambiance recadrée sans visage -->
           <img 
             src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80" 
             alt="Table de bistrot nocturne" 
@@ -144,7 +143,7 @@
         Le silence qui a suivi sa quatrième tirade sur le marché immobilier était tellement épais qu'on entendait le grésillement du néon au-dessus du percolateur. J'ai terminé mon verre d'eau du robinet à température ambiante, j'ai posé deux euros sur la table pour le service, et je me suis levée.
       </p>
 
-      <!-- VERDICT DU DÉNOUEMENT (SIGNATURE DU BLOG) -->
+      <!-- VERDICT DU DÉNOUEMENT -->
       <div class="my-12 border-l-2 border-red-700 pl-6 py-2 space-y-2 bg-gradient-to-r from-red-950/10 to-transparent">
         <div class="mono text-xs text-red-500 uppercase tracking-widest">Dénouement de l'archive</div>
         <p class="mono text-sm text-stone-300">
@@ -155,7 +154,7 @@
 
     </article>
 
-    <!-- ARCHIVES DES ANCIENNES CHRONIQUES (ACCORDÉON SIMPLE) -->
+    <!-- ARCHIVES DES ANCIENNES CHRONIQUES -->
     <section class="mt-20 pt-10 border-t border-stone-900">
       <div class="mono text-xs uppercase tracking-widest text-stone-500 mb-6">Index des précédents naufrages</div>
       
@@ -176,8 +175,8 @@
 
   <!-- SCRIPT DE VALIDATION DU SAS -->
   <script>
-    // Mot de passe configuré
-    const CORRECT_PASSWORD = "petitecouronne";
+    // Mot de passe cible
+    const VALID_PASSWORDS = ["petite couronne", "petitecouronne"];
 
     const unlockForm = document.getElementById('unlock-form');
     const passwordInput = document.getElementById('password-input');
@@ -189,9 +188,10 @@
     // Validation du mot de passe
     unlockForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const entered = passwordInput.value.trim().toLowerCase();
+      // Nettoyage : minuscules et espaces multiples réduits
+      const entered = passwordInput.value.trim().toLowerCase().replace(/\s+/g, ' ');
 
-      if (entered === CORRECT_PASSWORD) {
+      if (VALID_PASSWORDS.includes(entered)) {
         errorMsg.classList.add('hidden');
         passwordInput.value = '';
         
