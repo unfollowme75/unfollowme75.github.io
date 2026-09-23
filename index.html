@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr" class="bg-[#050505] text-stone-200">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>inParislifing</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'EB Garamond', serif;
+      background-color: #050505;
+      color: #e5e5e5;
+      -webkit-font-smoothing: antialiased;
+    }
+    .mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    ::selection {
+      background: #dc2626;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-red-700 selection:text-white">
+
+  <!-- SAS DE VERROUILLAGE -->
+  <main id="lock-screen" class="flex-1 flex flex-col items-center justify-center px-6 py-12 transition-opacity duration-500">
+    <div class="w-full max-w-sm flex flex-col items-center text-center space-y-7">
+      
+      <!-- LOGO GÉOMÉTRIQUE 75 -->
+      <div class="relative w-24 h-24 flex items-center justify-center">
+        <svg class="absolute inset-0 w-full h-full text-stone-800" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+          <circle cx="50" cy="50" r="46" stroke-width="1" stroke-dasharray="2 4" class="opacity-40" />
+          <circle cx="50" cy="50" r="38" stroke-width="1" class="text-stone-700 opacity-60" />
+          <circle cx="50" cy="50" r="28" stroke-width="1" stroke-dasharray="3 3" class="text-stone-600" />
+          <circle cx="50" cy="50" r="16" stroke-width="1.2" class="text-stone-500" />
+        </svg>
+        <span class="mono text-xs font-semibold tracking-widest text-red-600 z-10">75</span>
+      </div>
+
+      <!-- BANDEAU PARENTAL ADVISORY -->
+      <div class="border border-stone-200 bg-black px-3 py-1.5 flex flex-col items-center shadow-lg select-none">
+        <span class="mono text-[10px] font-extrabold tracking-[0.22em] text-white leading-tight uppercase">PARENTAL ADVISORY</span>
+        <span class="mono text-[8px] font-semibold tracking-[0.32em] text-stone-300 leading-tight uppercase">EXPLICIT CONTENT</span>
+      </div>
+
+      <!-- IDENTITÉ & STATUT -->
+      <div class="space-y-1.5 flex flex-col items-center">
+        <div class="flex items-center space-x-2 text-stone-200">
+          <!-- Logo monochrome Instagram -->
+          <svg class="w-3.5 h-3.5 fill-current opacity-80" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+          <span class="mono text-sm tracking-wider font-medium">@unfollowme.75</span>
+        </div>
+        <div class="mono text-xs text-stone-500 font-light">❕usernotfound</div>
+      </div>
+
+      <!-- INSTRUCTIONS BILINGUES -->
+      <div class="space-y-1 pt-1">
+        <p class="mono text-[11px] text-stone-400 font-light leading-relaxed">
+          Le mot de passe est un détail du dernier post Instagram
+        </p>
+        <p class="mono text-[11px] text-stone-400 font-light leading-relaxed">
+          The password is a detail from the latest Instagram post
+        </p>
+      </div>
+
+      <!-- FORMULAIRE -->
+      <form id="unlock-form" class="w-full space-y-3 pt-2">
+        <div class="relative">
+          <input 
+            type="text" 
+            id="password-input" 
+            autocomplete="off" 
+            autocorrect="off" 
+            autocapitalize="off" 
+            spellcheck="false" 
+            placeholder="••••••••••••" 
+            class="w-full bg-[#0a0a0a] border border-stone-800 focus:border-stone-400 text-stone-100 mono text-xs px-4 py-3 text-center tracking-widest outline-none transition-colors placeholder:text-stone-700"
+          />
+        </div>
+        
+        <button 
+          type="submit" 
+          class="w-full border border-stone-700 hover:border-stone-400 hover:bg-stone-900 text-stone-300 mono text-xs py-3 tracking-widest uppercase transition-all duration-300 cursor-pointer"
+        >
+          Unlock last entry
+        </button>
+
+        <p id="error-msg" class="mono text-[11px] text-red-500 hidden pt-1">
+          Détail erroné. Vérifiez le carrousel.
+        </p>
+      </form>
+
+    </div>
+  </main>
+
+  <!-- CONTENU PROTÉGÉ (DÉVERROUILLÉ) -->
+  <div id="protected-content" class="hidden flex-1 max-w-xl mx-auto px-6 py-12 w-full">
+    
+    <!-- EN-TÊTE APRÈS DÉVERROUILLAGE -->
+    <header class="border-b border-stone-900 pb-5 mb-8 flex justify-between items-center">
+      <span class="mono text-[11px] tracking-wider text-stone-400 lowercase">
+        mutual "user not found" situation
+      </span>
+      <button id="lock-btn" class="mono text-[10px] text-stone-500 hover:text-stone-300 tracking-wider uppercase border-b border-transparent hover:border-stone-600 transition-colors cursor-pointer">
+        [ Verrouiller ]
+      </button>
+    </header>
+
+    <!-- SECTION PRINCIPALE -->
+    <section class="space-y-6">
+      
+      <!-- TITRE EXACT DEMANDÉ -->
+      <div class="mono text-xs sm:text-sm text-stone-300 tracking-widest uppercase font-medium">
+        #1 occurrance coming soon
+      </div>
+
+      <!-- EMPLACEMENT PHOTO RECADRÉE (CHEMISE POLO) -->
+      <div class="border border-stone-800 p-2 bg-[#090909]">
+        <div class="aspect-[3/4] sm:aspect-[4/5] bg-stone-950 overflow-hidden relative flex items-center justify-center">
+          <img 
+            src="polo.jpg" 
+            alt="#1 occurrance" 
+            class="w-full h-full object-cover filter contrast-105 brightness-95"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+          <!-- Secours si l'image polo.jpg n'est pas encore téléversée sur GitHub -->
+          <div class="hidden absolute inset-0 flex flex-col items-center justify-center p-6 text-center mono text-xs text-stone-500 bg-stone-950">
+            <span>[ polo.jpg non détecté ]</span>
+            <span class="text-[10px] mt-1 text-stone-600">Déposez l'image sous le nom polo.jpg à côté de index.html</span>
+          </div>
+          <div class="absolute bottom-3 left-3 mono text-[9px] text-stone-400 bg-black/85 px-2 py-0.5 tracking-widest uppercase">
+            Archive · 75
+          </div>
+        </div>
+      </div>
+
+      <!-- SIMULATION DE L'ARTICLE ENTIÈREMENT FLOUTÉ -->
+      <div class="pt-4 relative select-none pointer-events-none overflow-hidden">
+        <div class="space-y-4 filter blur-[7px] opacity-25 text-stone-300 leading-relaxed text-base font-light">
+          <p>
+            Il portait cette chemise trop repassée pour quelqu'un qui prétendait vivre dans l'urgence. Le col tenait droit avec une rigidité presque déplacée au milieu du vacarme de cette brasserie du boulevard Voltaire. Quand il s'est assis, il a pris soin de ne pas froisser le tissu, comme si chaque pli risquait de trahir ce qu'il essayait de dissimuler depuis le premier message échangé sur l'application.
+          </p>
+          <p>
+            Trois verres plus tard, les certitudes s'effritaient déjà. Le bouton du col s'était défait, laissant échapper une anecdote sans queue ni tête sur un été à Deauville et une rupture qu'il disait digérée. Tout dans sa posture annonçait déjà le dénouement inévitable : le silence radio dès le lendemain matin, et le profil qui disparaît sans laisser de trace.
+          </p>
+          <p>
+            L'addition est restée sur la coupelle en zinc. Quinze euros pour deux cafés froids et quarante minutes de monologue. Un regard vers la sortie, le manteau déjà enfilé, et la certitude que nous étions déjà devenus deux lignes introuvables sur un écran noir.
+          </p>
+        </div>
+
+        <!-- PASTILLE DISCRÈTE AU CENTRE DU FLOU -->
+        <div class="absolute inset-0 flex items-center justify-center">
+          <span class="mono text-[10px] tracking-[0.25em] uppercase text-stone-400 bg-black/90 border border-stone-800 px-4 py-2">
+            Récit en cours de rédaction
+          </span>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <!-- FOOTER ÉPURÉ (PARIS SEULEMENT) -->
+  <footer class="py-10 text-center border-t border-stone-900/60 select-none">
+    <span class="mono text-[10px] tracking-[0.4em] text-stone-600 uppercase">PARIS</span>
+  </footer>
+
+  <!-- SCRIPT DU SAS -->
+  <script>
+    function cleanInput(val) {
+      return (val || '')
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase()
+        .replace(/[\u00a0\s\-_]+/g, '')
+        .trim();
+    }
+
+    const unlockForm = document.getElementById('unlock-form');
+    const passwordInput = document.getElementById('password-input');
+    const errorMsg = document.getElementById('error-msg');
+    const lockScreen = document.getElementById('lock-screen');
+    const protectedContent = document.getElementById('protected-content');
+    const lockBtn = document.getElementById('lock-btn');
+
+    unlockForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const entered = cleanInput(passwordInput.value);
+
+      // Valide indifféremment "petitecouronne", "petite couronne" ou "Petite Couronne"
+      if (entered === 'petitecouronne') {
+        errorMsg.classList.add('hidden');
+        passwordInput.value = '';
+        
+        lockScreen.classList.add('opacity-0');
+        setTimeout(() => {
+          lockScreen.classList.add('hidden');
+          protectedContent.classList.remove('hidden');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 300);
+      } else {
+        errorMsg.classList.remove('hidden');
+        passwordInput.classList.add('border-red-600');
+        setTimeout(() => {
+          passwordInput.classList.remove('border-red-600');
+        }, 1200);
+      }
+    });
+
+    lockBtn.addEventListener('click', () => {
+      protectedContent.classList.add('hidden');
+      lockScreen.classList.remove('hidden');
+      setTimeout(() => {
+        lockScreen.classList.remove('opacity-0');
+      }, 50);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+</body>
+</html>
