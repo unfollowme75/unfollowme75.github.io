@@ -64,7 +64,13 @@
           </svg>
           <span class="mono text-sm tracking-wider font-medium underline-offset-4 hover:underline">@unfollowme.75</span>
         </a>
-        <div class="mono text-xs text-stone-500 font-light">❕usernotfound</div>
+        
+        <!-- AVATAR SOUS LE NOM D'UTILISATEUR -->
+      <div class="w-20 h-20 rounded-full overflow-hidden border border-stone-800 bg-[#090909] my-2 shadow-inner">
+        <img 
+          src="avatar.jpg" 
+          alt="Avatar" 
+          class="w-full h-full object-cover filter contrast-105 brightness-95"/>
       </div>
 
       <!-- INSTRUCTIONS BILINGUES -->
@@ -113,35 +119,47 @@
       
       <!-- LIGNE SUPÉRIEURE : TITRE & BOUTON VERROUILLER -->
       <div class="flex justify-between items-start mb-5">
-        <div class="text-left space-y-1">
+        <div class="text-left space-y-1 min-w-0 flex-1">
           <a 
             href="https://instagram.com/unfollowme.75" 
             target="_blank" 
             rel="noopener noreferrer" 
-            class="mono text-sm tracking-wider font-medium text-stone-200 hover:text-white transition-colors inline-block"
-          >
+            class="mono text-sm tracking-wider font-medium text-stone-200 hover:text-white transition-colors inline-block">
+            
             Unfollowme.75
           </a>
+          
+          <!-- LOGO GÉOMÉTRIQUE 75 -->
+      <div class="relative w-24 h-24 flex items-center justify-center">
+        <svg class="absolute inset-0 w-full h-full text-stone-800" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+          <circle cx="50" cy="50" r="46" stroke-width="1" stroke-dasharray="2 4" class="opacity-40" />
+          <circle cx="50" cy="50" r="38" stroke-width="1" class="text-stone-700 opacity-60" />
+          <circle cx="50" cy="50" r="28" stroke-width="1" stroke-dasharray="3 3" class="text-stone-600" />
+          <circle cx="50" cy="50" r="16" stroke-width="1.2" class="text-stone-500" />
+        </svg>
+        <span class="mono text-xs font-semibold tracking-widest text-red-600 z-10">75</span>
+      </div>
+          
           <p class="mono text-[11px] text-stone-500 font-light leading-relaxed">
-            ✨in 30s✨, emotionally in debt, rich in bad decisions.
+            ✨in 30s✨ emotionally in debt, rich in bad decisions
           </p>
         </div>
 
         <button 
           id="lock-btn" 
-          class="mono text-[10px] text-stone-500 hover:text-stone-300 tracking-wider uppercase border-b border-transparent hover:border-stone-600 transition-colors cursor-pointer pt-0.5"
+          class="mono text-[10px] text-stone-500 hover:text-stone-300 tracking-wider uppercase border-b border-transparent hover:border-stone-600 transition-colors cursor-pointer pt-0.5 whitespace-nowrap shrink-0 ml-4"
         >
           [ Verrouiller ]
         </button>
       </div>
-
+      
       <!-- STATUT & AVERTISSEMENT -->
       <div class="text-left">
         <span class="mono text-[11px] tracking-wider text-stone-400 lowercase block">
-          usual "user not found" situations.
+         occurrences unfolding into the "user not found" supernova.
         </span>
         <p class="mono text-[10px] text-stone-600 font-light mt-1 lowercase">
-          any resemblance to actual people or real events is purely coincidental
+          FICTIONAL work. any resemblance to actual people or real events is purely coincidental
         </p>
       </div>
 
@@ -151,7 +169,7 @@
     <section class="space-y-6">
       
       <div class="mono text-xs sm:text-sm text-stone-300 tracking-widest uppercase font-medium">
-        #1 occurrance coming soon
+        #1 occurrance coming soon 
       </div>
 
       <!-- CAPTURE METADATA TECH BROS -->
@@ -163,13 +181,39 @@
         />
       </div>
 
+      <!-- ARTICLE TEASER FLOUTÉ -->
+      <div class="relative my-8 border border-stone-900/80 bg-[#080808] p-6 rounded-lg overflow-hidden">
+        
+        <!-- BANDEAU CENTRAL COMING SOON -->
+        <div class="absolute inset-0 z-10 flex items-center justify-center bg-black/40 backdrop-blur-[1px]">
+          <div class="border border-stone-800 bg-[#0c0c0c]/90 px-4 py-2.5 shadow-2xl flex items-center space-x-2">
+            <span class="mono text-xs tracking-widest uppercase text-stone-200 font-medium">
+              Coming soon ⌨️
+            </span>
+          </div>
+        </div>
+
+        <!-- TEXTE FACTICE ENTIÈREMENT FLOUTÉ -->
+        <div class="space-y-4 text-base sm:text-lg leading-relaxed text-stone-400 font-light filter blur-[5px] select-none pointer-events-none opacity-30">
+          <p>
+            Il est arrivé avec vingt-deux minutes de retard. Pas un mot d'excuse, juste une main passée dans des cheveux trop gominés pour un mardi soir rue de la Roquette. Quand le serveur a posé la carte, il n'a même pas levé les yeux.
+          </p>
+          <p>
+            Une carafe d'eau, deux verres. Ça ira pour l'instant. J'ai compris à cet instant précis que les quarante-cinq prochaines minutes allaient consister à écouter un monologue interminable sur ses investissements locatifs et sa rupture de 2021.
+          </p>
+          <p>
+            Le silence qui a suivi sa quatrième tirade sur le marché immobilier était tellement épais qu'on entendait le grésillement du néon au-dessus du percolateur. J'ai terminé mon verre d'eau du robinet à température ambiante, j'ai posé deux euros sur la table, et je me suis levée sans me retourner.
+          </p>
+        </div>
+      </div>
+
     </section>
 
   </div>
 
   <!-- FOOTER ÉPURÉ (PARIS, 2026. SEULEMENT) -->
   <footer class="py-10 text-center border-t border-stone-900/60 select-none">
-    <span class="mono text-[10px] tracking-[0.4em] text-stone-600 uppercase">PARIS</span>
+    <span class="mono text-[10px] tracking-[0.4em] text-stone-600 uppercase">PARIS, 2026.</span>
   </footer>
 
   <!-- SCRIPT DE VALIDATION DU SAS -->
