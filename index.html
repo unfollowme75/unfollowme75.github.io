@@ -263,46 +263,49 @@
 
   <!-- SCRIPT DE VALIDATION DU SAS -->
   <script>
-    const VALID_PASSWORDS = ["petite couronne", "petitecouronne"];
-
     const unlockForm = document.getElementById('unlock-form');
     const passwordInput = document.getElementById('password-input');
-    const errorMsg = document.getElementById('error-msg');
     const lockScreen = document.getElementById('lock-screen');
-    const protectedContent = document.getElementById('protected-content');
-    const lockBtn = document.getElementById('lock-btn');
+    const blogContent = document.getElementById('blog-content');
+    const errorMsg = document.getElementById('error-msg');
+
+    // MOT DE PASSE OFFICIEL (en minuscules)
+    const SECRET_KEY = "petitecouronne";
 
     unlockForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const entered = passwordInput.value.trim().toLowerCase().replace(/\s+/g, ' ');
+      e.preventDefault(); // Empêche le rechargement brutal de la page
+      
+      // Nettoie la saisie : supprime les espaces parasites et force les minuscules
+      const enteredValue = passwordInput.value.trim().toLowerCase();
 
-      if (VALID_PASSWORDS.includes(entered)) {
-        errorMsg.classList.add('hidden');
-        passwordInput.value = '';
-        
-        lockScreen.classList.add('opacity-0');
-        setTimeout(() => {
-          lockScreen.classList.add('hidden');
-          protectedContent.classList.remove('hidden');
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }, 400);
+      if (enteredValue === SECRET_KEY) {
+        // Masque le sas d'accès
+        lockScreen.classList.add('hidden');
+        // Affiche le récit
+        blogContent.classList.remove('hidden');
+        window.scrollTo(0, 0);
       } else {
-        errorMsg.classList.remove('hidden');
-        passwordInput.classList.add('border-red-600');
+        // Affiche le message d'erreur
+        if (errorMsg) {
+          errorMsg.classList.remove('hidden');
+        }
+        passwordInput.classList.add('border-red-500');
         setTimeout(() => {
-          passwordInput.classList.remove('border-red-600');
+          passwordInput.classList.remove('border-red-500');
         }, 1500);
       }
     });
 
-    lockBtn.addEventListener('click', () => {
-      protectedContent.classList.add('hidden');
-      lockScreen.classList.remove('hidden');
-      setTimeout(() => {
-        lockScreen.classList.remove('opacity-0');
-      }, 50);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    // Bouton de reverrouillage (s'il existe dans le header de lecture)
+    const lockBtn = document.getElementById('lock-btn');
+    if (lockBtn) {
+      lockBtn.addEventListener('click', () => {
+        blogContent.classList.add('hidden');
+        lockScreen.classList.remove('hidden');
+        passwordInput.value = '';
+        if (errorMsg) errorMsg.classList.add('hidden');
+      });
+    }
   </script>
 
 </body>
