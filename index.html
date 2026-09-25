@@ -202,11 +202,16 @@
         </div>
 
         <!-- COLONNE DROITE : METABOX ALIGNÉE -->
-        <div class="border border-stone-800 bg-[#090909] p-5 mono text-xs rounded-xl shadow-lg flex flex-col justify-between">
-          <div>
-            <div class="text-stone-500 uppercase tracking-widest text-[10px] pb-3 border-b border-stone-850 mb-4 flex justify-between items-center">
-              <span>// SEEN BY USER</span>
-              <span class="text-red-500 text-[9px] lowercase font-sans">● offline</span>
+        <!-- EN-TÊTE : CAPTURE OFFICIELLE INSTAGRAM USER SEEN -->
+            <div class="pb-3 border-b border-stone-800 mb-4 flex items-center justify-between">
+              <img 
+                src="seen.jpg" 
+                alt="Instagram User Seen" 
+                class="h-7 sm:h-8 w-auto object-contain block rounded-sm filter contrast-105"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+              />
+              <span class="hidden text-stone-500 uppercase tracking-widest text-[10px]">// SEEN BY USER</span>
+              <span class="text-red-500 text-[9px] lowercase font-sans mono ml-auto">● offline</span>
             </div>
             
             <div class="space-y-3 text-[11px] leading-relaxed">
