@@ -188,58 +188,51 @@
       <div class="mono text-xs sm:text-sm text-stone-300 tracking-widest uppercase font-medium">
         #1 occurrance (coming soon) 
       </div>
-
-<!-- BLOC DUO : IMAGE TECHBROS + METABOX CÔTE À CÔTE -->
-      <div class="my-6 flex flex-col sm:flex-row gap-4 sm:gap-5 items-stretch justify-center w-full">
+ </div>
+      
+<!-- BLOC DUO : TECHBROS + METABOX SEULS EN COLONNES -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 items-stretch w-full select-none">
         
-        <!-- COLONNE GAUCHE : IMAGE TECHBROS -->
-        <div class="w-full sm:w-1/2 border border-stone-800/90 rounded-lg overflow-hidden bg-black flex items-center justify-center shadow-lg">
+        <!-- COLONNE GAUCHE : CAPTURE SMARTPHONE -->
+        <div class="border border-stone-800/90 rounded-xl overflow-hidden bg-black flex items-center justify-center shadow-lg">
           <img 
             src="techbros.jpg" 
-            alt="Tech bros metadata" 
-            class="w-full h-full object-cover sm:object-contain block filter contrast-105"
+            alt="Metadata screenshot" 
+            class="w-full h-full object-contain block filter contrast-105"
           />
         </div>
 
-        <!-- COLONNE DROITE : METABOX CORRIGÉE (ALIGNEMENT BLINDÉ) -->
-        <div class="border border-stone-800 bg-[#090909] p-5 mono text-xs rounded-xl shadow-lg flex flex-col justify-between select-none">
-          
+        <!-- COLONNE DROITE : METABOX ALIGNÉE -->
+        <div class="border border-stone-800 bg-[#090909] p-5 mono text-xs rounded-xl shadow-lg flex flex-col justify-between">
           <div>
-            <!-- EN-TÊTE -->
             <div class="text-stone-500 uppercase tracking-widest text-[10px] pb-3 border-b border-stone-850 mb-4 flex justify-between items-center">
               <span>// SEEN BY USER</span>
               <span class="text-red-500 text-[9px] lowercase font-sans">● offline</span>
             </div>
             
-            <!-- LIGNES DE DONNÉES (ALIGNEMENT PARFAIT PEU IMPORTE LA LONGUEUR DU TEXTE) -->
             <div class="space-y-3 text-[11px] leading-relaxed">
-              
               <div class="flex items-baseline">
                 <span class="text-stone-500 uppercase tracking-wider text-[10px] w-20 shrink-0 whitespace-nowrap">Date&nbsp;:</span>
                 <span class="text-stone-200 font-light">Juillet 2026</span>
               </div>
-
               <div class="flex items-baseline">
                 <span class="text-stone-500 uppercase tracking-wider text-[10px] w-20 shrink-0 whitespace-nowrap">Lieu&nbsp;:</span>
                 <span class="text-stone-200 font-light">Paris 75004 · Quai de Seine</span>
               </div>
-
               <div class="flex items-baseline">
                 <span class="text-stone-500 uppercase tracking-wider text-[10px] w-20 shrink-0 whitespace-nowrap">Statut&nbsp;:</span>
                 <span class="text-stone-200 font-light">Unfollowed</span>
               </div>
-
             </div>
           </div>
 
-          <!-- PIED DE FICHE -->
           <div class="pt-3 mt-4 border-t border-stone-850 text-[10px] text-stone-600 flex justify-between tracking-wider">
             <span>CASE: #01</span>
             <span>MUTUAL_BLOCK</span>
           </div>
-
+          
         </div>
-
+        
     <div class="border border-stone-800 p-2 bg-[#090909]">
         <div class="aspect-[3/4] sm:aspect-[4/5] bg-stone-950 overflow-hidden relative flex items-center justify-center">
           <img 
@@ -249,7 +242,8 @@
             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
           />
        <div class="absolute bottom-3 left-3 mono text-[9px] text-stone-400 bg-black/85 px-2 py-0.5 tracking-widest uppercase">
-            M. Freshly Dumped, 4 months prior to the following recollection of events.
+            M. Freshly-Dumped-4-months-prior, royally ignoring me on a romantic mini-cruise on la Seine. 
+            Oct. 2022.
           </div>
         </div>
       </div>
