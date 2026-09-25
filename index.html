@@ -278,42 +278,42 @@
     const unlockForm = document.getElementById('unlock-form');
     const passwordInput = document.getElementById('password-input');
     const lockScreen = document.getElementById('lock-screen');
-    const blogContent = document.getElementById('protected-content');
+    // Détecte automatiquement l'identifiant utilisé dans le HTML
+    const contentArea = document.getElementById('blog-content') || document.getElementById('protected-content');
     const errorMsg = document.getElementById('error-msg');
+    const lockBtn = document.getElementById('lock-btn');
 
-    // MOT DE PASSE OFFICIEL (en minuscules)
     const SECRET_KEY = "petitecouronne";
 
-    unlockForm.addEventListener('submit', (e) => {
-      e.preventDefault(); // Empêche le rechargement brutal de la page
-      
-      // Nettoie la saisie : supprime les espaces parasites et force les minuscules
-      const enteredValue = passwordInput.value.trim().toLowerCase();
+    if (unlockForm) {
+      unlockForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Nettoyage de la saisie
+        const entered = (passwordInput.value || '')
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .toLowerCase()
+          .replace(/[\u00a0\s\-_]+/g, '');
 
-      if (enteredValue === SECRET_KEY) {
-        // Masque le sas d'accès
-        lockScreen.classList.add('hidden');
-        // Affiche le récit
-        blogContent.classList.remove('hidden');
-        window.scrollTo(0, 0);
-      } else {
-        // Affiche le message d'erreur
-        if (errorMsg) {
-          errorMsg.classList.remove('hidden');
+        if (entered === SECRET_KEY) {
+          if (lockScreen) lockScreen.classList.add('hidden');
+          if (contentArea) contentArea.classList.remove('hidden');
+          window.scrollTo(0, 0);
+        } else {
+          if (errorMsg) errorMsg.classList.remove('hidden');
+          passwordInput.classList.add('border-red-500');
+          setTimeout(() => {
+            passwordInput.classList.remove('border-red-500');
+          }, 1200);
         }
-        passwordInput.classList.add('border-red-500');
-        setTimeout(() => {
-          passwordInput.classList.remove('border-red-500');
-        }, 1500);
-      }
-    });
+      });
+    }
 
-    // Bouton de reverrouillage (s'il existe dans le header de lecture)
-    const lockBtn = document.getElementById('lock-btn');
     if (lockBtn) {
       lockBtn.addEventListener('click', () => {
-        blogContent.classList.add('hidden');
-        lockScreen.classList.remove('hidden');
+        if (contentArea) contentArea.classList.add('hidden');
+        if (lockScreen) lockScreen.classList.remove('hidden');
         passwordInput.value = '';
         if (errorMsg) errorMsg.classList.add('hidden');
       });
