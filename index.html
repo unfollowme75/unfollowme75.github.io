@@ -189,11 +189,8 @@
       </div>
  </div>
       
-<!-- CONTENEUR COMPACT CENTRÉ (LARGEUR RÉDUITE & PROPORTIONNÉE) -->
-      <div class="my-6 max-w-[350px] sm:max-w-[380px] mx-auto flex flex-col gap-3 w-full select-none">
-        
-        <!-- 1. CAPTURE SAMSUNG COMPACTE -->
-        <div class="w-full border border-stone-800/80 rounded-xl overflow-hidden bg-black flex items-center justify-center shadow-md">
+<!-- 1. CAPTURE TECHBROS (PLEINE LARGEUR) -->
+        <div class="w-full border border-stone-800/90 rounded-2xl overflow-hidden bg-black shadow-lg">
           <img 
             src="techbros.jpg" 
             alt="Metadata screenshot" 
@@ -201,42 +198,42 @@
           />
         </div>
 
-        <!-- 2. METABOX COMPACTE (PADDING ET INTERLIGNES RESSERRÉS) -->
-        <div class="w-full border border-stone-800/80 bg-[#090909] p-4 mono text-[10px] sm:text-[11px] rounded-xl shadow-md flex flex-col justify-between">
-
-            <!-- EN-TÊTE : SEEN S'INTÈGRE SANS AUCUNE DÉMARCATION -->
-            <div class="pb-2.5 border-b border-stone-850 mb-3 flex items-center justify-between gap-3">
+        <!-- 2. METABOX (PLEINE LARGEUR + GRILLE CSS ANTI-CHEVAUCHEMENT) -->
+        <div class="w-full border border-stone-800/90 bg-black p-5 mono rounded-2xl shadow-lg">
+          
+          <!-- EN-TÊTE : SEEN + APPAREIL + OFFLINE -->
+          <div class="pb-3.5 border-b border-stone-850 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
               <img 
                 src="seen.jpg" 
                 alt="Instagram User Seen" 
-                class="flex-1 max-w-[78%] sm:max-w-[80%] h-auto max-h-8 sm:max-h-9 object-contain object-left block mix-blend-screen"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+                class="h-5 sm:h-6 w-auto object-contain block mix-blend-screen"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';"
               />
-              <span class="hidden text-stone-500 uppercase tracking-widest text-[9px]">// SEEN BY USER</span>
-              <span class="text-red-500 text-[8px] sm:text-[9px] lowercase font-sans mono shrink-0 whitespace-nowrap">● offline</span>
+              <span class="hidden text-stone-500 uppercase tracking-widest text-[9px]">// SEEN</span>
             </div>
-            
-            <!-- LIGNES DE DONNÉES RESSERRÉES -->
-            <div class="space-y-2 text-[10px] sm:text-[11px] leading-snug">
-              <div class="flex items-baseline">
-                <span class="text-stone-500 uppercase tracking-wider text-[9px] sm:text-[10px] w-16 shrink-0 whitespace-nowrap">THE LINK UP 🔗&nbsp;:</span>
-                <span class="text-stone-300 font-light">post-graduation recycling ♻️</span>
-              </div>
-              <div class="flex items-baseline">
-                <span class="text-stone-500 uppercase tracking-wider text-[9px] sm:text-[10px] w-16 shrink-0 whitespace-nowrap">Arrondissements 🍷&nbsp;:</span>
-                <span class="text-stone-300 font-light">75006 · 75008 · 75012 · 75015</span>
-              </div>
-              <div class="flex items-baseline">
-                <span class="text-stone-500 uppercase tracking-wider text-[9px] sm:text-[10px] w-16 shrink-0 whitespace-nowrap">RULING&nbsp;:</span>
-                <span class="text-stone-300 font-light">✨unfollowed but not blocked✨</span>
-              </div>
-            </div>
+            <span class="text-stone-600 text-xs sm:text-sm">📷</span>
+            <span class="text-red-500 text-[9px] sm:text-[10px] lowercase font-sans mono">● offline</span>
           </div>
 
+          <!-- GRILLE DE DONNÉES STRICTE : COLONNE 1 = 140PX / COLONNE 2 = VALEUR LIBRE -->
+          <div class="pt-4 grid grid-cols-[140px_1fr] gap-x-4 gap-y-3 items-baseline text-xs">
+            
+            <!-- LIGNE 1 -->
+            <span class="text-stone-500 uppercase tracking-wider text-[10px]">THE LINK UP&nbsp;:</span>
+            <span class="text-stone-200 font-light">post-graduation recycling ♻️</span>
+
+            <!-- LIGNE 2 -->
+            <span class="text-stone-500 uppercase tracking-wider text-[10px]">ARRONDISSE.&nbsp;:</span>
+            <span class="text-stone-200 font-light">75006 🍷 75008 · 75012 · 75015</span>
+
+            <!-- LIGNE 3 -->
+            <span class="text-stone-500 uppercase tracking-wider text-[10px]">RULING&nbsp;:</span>
+            <span class="text-stone-200 font-light">✨unfollowed but not blocked✨</span>
+
+          </div>
 
         </div>
-
-      </div>
         
     <div class="border border-stone-800 p-2 bg-[#090909]">
         <div class="aspect-[3/4] sm:aspect-[4/5] bg-stone-950 overflow-hidden relative flex items-center justify-center">
@@ -247,7 +244,7 @@
             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
           />
        <div class="absolute bottom-3 left-3 mono text-[9px] text-stone-400 bg-black/85 px-2 py-0.5 tracking-widest uppercase">
-            M. Freshly-Dumped-4-months-prior, oblivious ignoring me on an impromptu mini-cruise on la Seine. 
+            M. Freshly-Dumped-4-months-prior, oblivious to ignoring me on a mini-cruise on la Seine. 
             circa Oct. 2022.
           </div>
         </div>
